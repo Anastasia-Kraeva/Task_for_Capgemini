@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="/tick.png" />
+  </head>
+
+  <body>
+    <div class="fixed_box display_none">
+      <div class="dialog_box">
+        <p class="header">Ваши данные</p>
+        <p class="data"></p>
+        <div class="button_box">
+          <button class="button-submit" onclick="submitForm()">Ок</button>
+          <button class="button-submit" onclick="toggleClass()">Отмена</button>
+          <button class="button-submit" onclick="RegisterAgain()">
+            Зарегистрироваться снова
+          </button>
+        </div>
+      </div>
+    </div>
+    <form onsubmit="return false">
+      <legend class="heading-form">Sign Up</legend>
+
+      <fieldset>
+        <input
+          name="first name"
+          class="input-text"
+          type="text"
+          placeholder="First name"
+          autofocus
+          required
+        />
+        <input
+          name="last name"
+          class="input-text"
+          type="text"
+          placeholder="Last name"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <div class="gender_box">
+          <label for="">Gender</label>
+          <input
+            type="radio"
+            id="gender_male"
+            name="gender"
+            value="Male"
+            checked
+          />
+          <label for="gender_male">Male</label>
+          <input type="radio" id="gender_female" name="gender" value="Female" />
+          <label for="gender_female">Female</label>
+        </div>
+
+        <div class="age_box">
+          <label for="age">Age</label>
+          <input
+            name="age"
+            type="number"
+            min="10"
+            max="100"
+            step="1"
+            id="age"
+            value="20"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset class="email_box">
+        <label for="email">Email</label>
+        <input
+          name="email"
+          class="input-text"
+          type="email"
+          id="email"
+          required
+        />
+      </fieldset>
+
+      <fieldset class="password_box">
+        <div>
+          <label for="password1">Password</label>
+          <input
+            class="input-text"
+            type="password"
+            id="password1"
+            required=""
+          />
+        </div>
+        <div>
+          <label for="password2">Confirm Password</label>
+          <input
+            class="input-text"
+            type="password"
+            id="password2"
+            required=""
+          />
+        </div>
+      </fieldset>
+
+      <input class="button-submit" type="submit" disabled="true" />
+    </form>
+    <pre id="log"></pre>
+    <script src="script.js"></script>
+  </body>
+</html>
